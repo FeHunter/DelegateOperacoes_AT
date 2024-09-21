@@ -27,9 +27,30 @@ namespace DelegateOperacoes_AT
             return Multiplicar;
         }
 
+        static int LerInteiro(string msg)
+        {
+            Console.Write(msg);
+            return int.Parse(Console.ReadLine());
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Exercicio 1 - AT");
+
+            // declaração
+            Operecao Soma = new Operecao(Somar);
+            Operecao Subtrair = new Operecao(Subtracao);
+            Operecao Multiplicar = new Operecao(Multiplicacao);
+
+            int n1 = LerInteiro("Digite o 1° numero: ");
+            int n2 = LerInteiro("Digite o 2° numero: ");
+
+            Soma(n1, n2);
+            Subtrair(n1, n2);
+            Multiplicar(n1, n2);
+
+            Console.ReadLine();
+
         }
     }
 }
